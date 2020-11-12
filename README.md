@@ -13,7 +13,28 @@
 * 4.实例化研究生类时，可采用运行时通过main方法的参数args一次性赋值，也可采用Scanner类实现运行时交互式输入。
 * 5.根据输入情况，要在程序中做异常处理。
 ## 实验设计与核心代码
-### 
+* 1.设计两个管理接口：
+* 学生管理接口Sudent（缴纳学费、查学费抽象方法）
+    * getfee     缴纳学费
+    * feeOfYear  查询学费
+* 教师管理接口Teacher（发放薪水、查询薪水抽象方法）
+    * getSalary   发放薪水
+    * salaryOfYear查询薪水
+* 2.设计博士研究生类DRStudents，实现上述的两个接口（属性：姓名、性别、年龄、专业、班级、每学期学费、每月薪水）
+    * String name           姓名
+    * String gender         性别
+    * int age               年龄
+    * String Major          专业
+    * String banji          班级
+    * float feePerTerm      每学期学费
+    * float salaryPerMonth  每月薪水
+    * float money = 0       当前余额<br/> 
+    * 然后根据两者之差（对年学费和年收入进行统计，用收入减去学费）求得纳税额算出每名博士研究生的年应纳税金额
+* 3.设计纳税算法类Tax纳税算法依据国家最新工资纳税标准，方法用static final修饰定义
+* 4.实例化研究生类时，采用运行时通过main方法的参数args一次性赋值以及采用Scanner类实现运行时交互式输入
+* 5.根据输入情况，在程序中做异常处理类Utils (分别作了输入字符型数据的异常处理、输入浮点型数据的异常处理和输入整型数据的异常处理)
+* 6.编写测试类Test，实例化两名博士研究生，统计他们的年收入和学费
+
 ### 税务计算实现代码
 * 将数值存储在两个数组中，通过数组的下标判断所在税务档位，并取出另一个数组对应档位的税额百分比进行计算。
 ```java
@@ -39,7 +60,7 @@ public class Tax {
 ```
 ## 实验截图与结果
 ### 实验结果
-![1](https://github.com/wangjianwei-eng/java3/blob/main/src/%E6%B5%8B%E8%AF%951.JPG)
+![1](https://github.com/wangjianwei-eng/java3/blob/main/src/%E6%B5%8B%E8%AF%951.JPG)<br/>
 ![2](https://github.com/wangjianwei-eng/java3/blob/main/src/%E6%B5%8B%E8%AF%952.JPG)
 ### 异常处理
 ![3](https://github.com/wangjianwei-eng/java3/blob/main/src/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.JPG)
