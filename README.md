@@ -27,6 +27,6 @@
 ![1]()
 ![2]()
 ### 异常处理
-![3]()
+![3](https://github.com/wangjianwei-eng/java3/blob/main/src/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.JPG)
 ## 实验感想
 掌握了接口的使用方法，明白了定义异常处理的方法
