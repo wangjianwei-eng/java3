@@ -13,15 +13,30 @@
 * 4.实例化研究生类时，可采用运行时通过main方法的参数args一次性赋值，也可采用Scanner类实现运行时交互式输入。
 * 5.根据输入情况，要在程序中做异常处理。
 ## 实验设计与核心代码
-
-### 国家最新工资纳税标准：
-* 不超过1500元的，按照3%;
-* 超过1500元至4500元的部分，按照10%；
-* 超过4500元至9000元的部分，按照20%；
-* 超过9000元至35000元的部分按照25%；
-* 超过35000元至55000元的部分，按照30%；
-* 超过55000元至80000元的部分，按照35%；
-* 超过80000元的部分，按照45%。
+### 
+### 税务计算实现代码
+* 将数值存储在两个数组中，通过数组的下标判断所在税务档位，并取出另一个数组对应档位的税额百分比进行计算。
+```java
+public class Tax {
+   final static float[] tax = {0.03f,0.1f,0.2f,0.25f,0.35f,0.45f};
+   final static int[ ][ ] rules = {{0, 3000}, {3000, 12000}, {12000, 25000}, {25000, 35000}, {35000, 55000}, {55000, 80000}, {80000, -1}};
+   public static float getTax(float revenues) {
+       return tax[getLevel(revenues)] * revenues;
+   }
+   public static int getLevel(float revenues) {
+       for (int i = 0; i < rules.length; i++) {
+           if (inRange(revenues, rules[i][0], rules[i][1])) return i;
+       }
+       return rules.length - 1;
+   }
+ //用boolean来判断
+   public static boolean inRange(float num, float min, float max) {
+	   if(min>0&&num<min) return false;
+	   if(max>0&&num>max) return false;
+	   return true;
+   }
+}
+```
 ## 实验截图与结果
 ### 实验结果
 ![1](https://github.com/wangjianwei-eng/java3/blob/main/src/%E6%B5%8B%E8%AF%951.JPG)
@@ -29,4 +44,6 @@
 ### 异常处理
 ![3](https://github.com/wangjianwei-eng/java3/blob/main/src/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.JPG)
 ## 实验感想
-掌握了接口的使用方法，明白了定义异常处理的方法
+* 掌握了接口的使用方法
+* 掌握了抽象类和抽象方法的定义
+* 明白了定义异常处理的方法
