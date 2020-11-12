@@ -24,8 +24,8 @@
 * 超过80000元的部分，按照45%。
 ## 实验截图与结果
 ### 实验结果
-![1]()
-![2]()
+![1](https://github.com/wangjianwei-eng/java3/blob/main/src/%E6%B5%8B%E8%AF%951.JPG)
+![2](https://github.com/wangjianwei-eng/java3/blob/main/src/%E6%B5%8B%E8%AF%952.JPG)
 ### 异常处理
 ![3](https://github.com/wangjianwei-eng/java3/blob/main/src/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.JPG)
 ## 实验感想
